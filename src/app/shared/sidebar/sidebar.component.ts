@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit {
   public token : String |any;
   tokenDes : String |any
   name :string |any
+  ocultar : boolean |any
 
   constructor(
     private siderbarser : SidebarService,
@@ -34,8 +35,15 @@ export class SidebarComponent implements OnInit {
   getnameUser(){
     this.token = localStorage.getItem('token');
     this.tokenDes = decode(this.token);
-    const {names} = this.tokenDes;
+    const {names,typeUser} = this.tokenDes;
     this.name = names
+    this.ocultar = true
+    console.log(typeUser)
+    if(typeUser =="user"){
+    this.ocultar = false
+
+    
+    }    
   }
 
 }

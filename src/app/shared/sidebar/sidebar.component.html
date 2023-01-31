@@ -24,8 +24,9 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item" *ngFor="let item of menuItems">
-          <div  class="nav-link">
+          <div *ngIf="ocultar">
+             <li  class="nav-item" *ngFor="let item of menuItems">
+            <div  class="nav-link">
             <i class="{{item.icono}}"></i>
             <p class="ml-2">
               {{item.titulo}} 
@@ -42,14 +43,13 @@
             </li>
           </ul>
         </li>
+          </div>
         <li class="nav-item">
           <a  class="nav-link" style="cursor: pointer;"(click)="logiout()">
             <i class="nav-icon fas fa-sign-out-alt"></i>
-            <p class="ml-2">
-              logiout
-              
-            </p>
+            <p class="ml-2">logiout</p>
           </a>
+          
         </li>
       
       </ul>
