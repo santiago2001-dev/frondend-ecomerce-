@@ -1,0 +1,103 @@
+
+          
+    <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Registro de ventas prendas de tipo <strong>{{titulo}}</strong>  </h3>
+
+            <div class="card-tools">
+              <div class="input-group input-group-sm" style="width: 150px;">
+           
+                <br>
+                <div class="input-group-append"> 
+                    
+                  <button *ngIf="tipo" (click)="getventasInf()" class="btn btn-dark"> prendas de tipo inferior</button>
+                </div>
+                <br>
+                <div class="input-group-append">
+                    <button  *ngIf="ocultar"   (click)="getVentas()" class="btn btn-dark">  prendas de tipo superior</button>
+                  </div>
+                  
+              </div>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Documento</th>
+                  <th>Nombres</th>
+                  <th>correo</th>
+                  <th>celular</th>
+                  <th>Dirección Domicilio </th>
+                  <th>Nombre Producto </th>
+
+                 <th>{{medidaUno}} </th>
+                  <th>{{medidaDos}} </th>
+                  <th>{{medidaTres}} </th>
+                  <th>{{medidaCuatro}} </th>
+                  <th *ngIf="tipo">{{medidaCinco}} </th>
+                  <th>Total </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let venta of listVentas">
+                  <td >
+                    {{venta.fecha}}
+                  </td>
+                  <td >
+                    {{venta.documento_user}}
+                  </td>
+                  <td >
+                    {{venta.nombres_clien}}
+                  </td>
+
+                  <td >
+                    {{venta.email}}
+                  </td>
+              
+                  <td >
+                    {{venta.cel}}
+                  </td>
+
+                  <td >
+                    {{venta.direccion_dom}}
+                  </td>
+
+                  <td >
+                    {{venta.nombre_producto}}
+                  </td>
+
+                  <td >
+                    {{venta.medidaUno}} CM
+                  </td>
+
+                  <td >
+                    {{venta.medidaDos}} CM
+                  </td>
+                  <td >
+                    {{venta.medidaTres}} CM
+                  </td>
+                  <td >
+                    {{venta.medidaCuatro}} CM
+                  </td>
+                  <td  *ngIf="tipo">
+                    {{venta.medidaCinco}} CM
+                  </td>
+
+                  <td >
+                   $ {{venta.total}}COP
+                  </td>
+
+                </tr>
+          
+       
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>

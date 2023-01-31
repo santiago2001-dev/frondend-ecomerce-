@@ -1,0 +1,69 @@
+<div class="hold-transition login-page">
+
+  
+    <div class="login-logo">
+      <img  naturalwidth="150px" naturalheight="110px" src="https://res.cloudinary.com/decsantg/image/upload/v1673390414/LOGO_1_w1h1nr.png" style="background-color:#0a0a0a;">
+    </div>
+    
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Ingresa en Stay store</p>
+  
+        <form [formGroup]= "registerForm" (submit)="registro()" method="post">
+
+            <div class="input-group mb-3">
+                <input type="text"  formControlName="names" class="form-control" id="exampleInputEmail1" placeholder="Ingresa tus nombres">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fa-solid fa-signature"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text"  formControlName="document" class="form-control" id="exampleInputEmail1" placeholder="Ingresa tú docuento">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fa-solid fa-id-card"></span>
+                  </div>
+                </div>
+              </div>
+          
+          <div class="input-group mb-3">
+            <input type="email"  formControlName="correo" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="input-group mb-3">
+            
+            <input type="password"  formControlName = "pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+         
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" class="btn btn-dark">Ingresa</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+        <br>
+  
+        <li routerLink="/login"  class= "fa-solid fa-rotate-left"></li>          
+        
+        
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  
+  

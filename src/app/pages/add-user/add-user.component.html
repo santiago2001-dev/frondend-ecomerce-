@@ -1,0 +1,43 @@
+
+  <form class="form" [formGroup]="userForm" (submit)="addUser()">
+    <div class="card-body">
+     
+        <div class="form-group">
+            <label for="exampleInputPassword1">Ingresa tu nombre</label>
+            <input type="text"  formControlName="names" class="form-control" id="exampleInputPassword1" placeholder="tus nombres">
+          </div>
+     
+        <div class="form-group">
+        <label for="exampleInputPassword1">email</label>
+        <input type="email"  formControlName="correo" class="form-control" id="exampleInputPassword1" placeholder="alguien@example.com">
+      </div>
+
+      <div class="form-group">
+
+        <label for="exampleInputEmail1">contraseña</label>
+        <input type="password" class="form-control" formControlName="pass" class="form-control" id="exampleInputEmail1" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa tu documento</label>
+        <input type="text"  formControlName="document" class="form-control" id="exampleInputPassword1" placeholder="tu documeto">
+      </div>
+      <div class="form-group">
+        <label for="exampleSelectBorder">Selecciona el tipo de usuario</label>
+        <select  formControlName="typeUser" class="custom-select form-control-border" id="exampleSelectBorder">
+          <option>admin</option>
+          <option>user</option>
+        
+        </select>
+      </div>
+
+   
+   
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <div class="card-footer">
+  <li routerLink="/dashboard/usuarios"  class= "fa-solid fa-rotate-left"></li> </div>
