@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { SidebarService } from 'src/app/services/sidebar.service'; 
 import decode from 'jwt-decode';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,13 +18,15 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private siderbarser : SidebarService,
-    private router : Router
+    private router : Router,
+    private jwHelper : JwtHelperService
+
   ) { 
     this.menuItems = this.siderbarser.menu;
   }
 
   ngOnInit(): void {
-    this.getnameUser()
+   this.getnameUser()
   }
 
   logiout(){
@@ -34,16 +37,18 @@ export class SidebarComponent implements OnInit {
 
   getnameUser(){
     this.token = localStorage.getItem('token');
+    if(this.jwHelper.isTokenExpired(this.token) || !localStorage.getItem('token')){
+      this.name = "bienvenido"
+    }else{
     this.tokenDes = decode(this.token);
     const {names,typeUser} = this.tokenDes;
     this.name = names
     this.ocultar = true
-    console.log(typeUser)
     if(typeUser =="user"){
-    this.ocultar = false
-
-    
-    }    
+      this.ocultar = false
+    } 
+    }
+     
   }
 
 }

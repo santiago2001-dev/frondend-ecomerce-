@@ -1,0 +1,24 @@
+<!-- <nav class="menu">
+    <ul>
+      <li routerLink="/dashboard/add-product" id="my"><span>Agregar</span></li>
+   
+    </ul>
+  </nav> -->
+  
+  <div class="product-container">
+  
+    <div *ngFor="let product of listProduct" class="product-card">
+
+      <img src="{{product.imagenUno}}" alt="Product Name" class="product-image">
+      <h3 class="product-name">{{product.titulo}}</h3>
+      <p class="product-price">{{product.sinopsis}}</p>
+      <div class="product-price">fecha :  {{product.fecha}}  </div>
+      <div class="product-price"> Precio : $ {{product.precio}} COP  </div>
+      <li class="fa-solid fa-trash" ></li>
+      <br>
+      <li class="fa-solid fa-pen-to-square"[routerLink]="['/dashboard/update-product/',(product.codigo_prod)]" ></li>
+  
+    </div>
+      
+   
+     </div>

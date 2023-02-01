@@ -11,7 +11,6 @@ import { LoginGuard } from '../guards/login.guard';
 import { AddProdComponent } from './add-prod/add-prod.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
-import { StoreComponent } from './store/store.component';
 
 
 const routes: Routes=[
@@ -29,7 +28,6 @@ const routes: Routes=[
 
     {path:'ventas',component: VentasComponent,data:{titulo:'Ventas',expectRole :'admin'},canActivate :[ RolesGuard]},
 
-    {path:'store',component: StoreComponent,data:{titulo:'Tienda',expectRole :'user'}}
   ]  
 }
 ]

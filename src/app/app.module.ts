@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 
 import { NopageFoundComponent } from './nopage-found/nopage-found.component';
 import { PagesModule } from './pages/pages.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 
 
@@ -24,6 +25,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     AuthModule,
     PagesModule,
+    ClienteModule
 
   
   ],

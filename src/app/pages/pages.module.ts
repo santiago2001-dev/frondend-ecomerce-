@@ -12,7 +12,6 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
-import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { StoreComponent } from './store/store.component';
     AddUserComponent,
     UpdateproductComponent,
    PagesComponent,
-   StoreComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +40,6 @@ import { StoreComponent } from './store/store.component';
     AddProdComponent,
     AddUserComponent,
     UpdateproductComponent,
-    StoreComponent
   ]
 })
 export class PagesModule { }

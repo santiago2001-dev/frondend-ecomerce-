@@ -24,33 +24,60 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-          <div *ngIf="ocultar">
-             <li  class="nav-item" *ngFor="let item of menuItems">
-            <div  class="nav-link">
-            <i class="{{item.icono}}"></i>
-            <p class="ml-2">
-              {{item.titulo}} 
-              <span class="badge badge-warning ml-2">{{item.submenu.length}}</span>
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </div>
-          <ul class="nav nav-treeview">
-            <li class="nav-item" *ngFor="let submenu of item.submenu">
-              <a routerLink="{{submenu.url}}" class="nav-link" style="cursor :pointer;">
-                <i class="{{submenu.icono}}"></i>
-                <p class="ml-2">{{submenu.titulo}}</p>
-              </a>
-            </li>
-          </ul>
+
+
+             
+         
+
+      <div *ngIf="ocultar">
+        <div *ngFor="let item of menuItems">
+       
+        <li class="nav-item" *ngFor="let submenu of item.submenu">
+          <a routerLink="{{submenu.url}}" class="nav-link" style="cursor :pointer;">
+            <i class="{{submenu.icono}}"></i>
+            <p class="ml-2">{{submenu.titulo}}</p>
+          </a>
         </li>
-          </div>
-        <li class="nav-item">
+     </div>
+    
+    </div>
+     
+ 
+
+   
+
+         <li class="nav-item">
           <a  class="nav-link" style="cursor: pointer;"(click)="logiout()">
             <i class="nav-icon fas fa-sign-out-alt"></i>
             <p class="ml-2">logiout</p>
           </a>
           
         </li>
+
+
+<!---
+        <div *ngIf="ocultar">
+          <li  class="nav-item" *ngFor="let item of menuItems">
+         <div  class="nav-link">
+         <i class="{{item.icono}}"></i>
+         <p class="ml-2">
+           {{item.titulo}} 
+           <span class="badge badge-warning ml-2">{{item.submenu.length}}</span>
+           <i class="right fas fa-angle-left"></i>
+         </p>
+       </div>
+       <ul class="nav nav-treeview">
+
+         <li class="nav-item" *ngFor="let submenu of item.submenu">
+           <a routerLink="{{submenu.url}}" class="nav-link" style="cursor :pointer;">
+             <i class="{{submenu.icono}}"></i>
+             <p class="ml-2">{{submenu.titulo}}</p>
+           </a>
+         </li>
+       </ul>
+       </li>
+       
+       </div> -->
       
       </ul>
     </nav>
