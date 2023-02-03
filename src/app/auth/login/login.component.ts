@@ -41,7 +41,7 @@ loginForm : FormGroup
       (data : any)=>{
         localStorage.setItem('token',data.token);
         if(!this.loginServ.isPermis()){
-          this.router.navigate(['/dashboard/store'])
+          this.router.navigate(['/home/store'])
           
         }else{
            this.router.navigate(['/dashboard'])

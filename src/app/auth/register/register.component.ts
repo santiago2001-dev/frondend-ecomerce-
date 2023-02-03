@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
             timer: 1500
           })
 
-          this.router.navigate(['/dashboard/store'])
+          this.router.navigate(['/login'])
 
         },error=>{
           console.log(error)

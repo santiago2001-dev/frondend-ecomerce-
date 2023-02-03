@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { producto } from 'src/app/models/productos';
+import { busqueda, producto } from 'src/app/models/productos';
 import { ProductosService } from 'src/app/services/productos.service';
 import swal from 'sweetalert2';
+import { Validators,FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-store',
@@ -11,17 +12,27 @@ import swal from 'sweetalert2';
 })
 export class StoreComponent implements OnInit {
   listProduct : producto[] = []
+  searchForm : FormGroup
 
   constructor(
     private router : Router,
-    private serviceProdd : ProductosService
-  ) { }
+    private serviceProdd : ProductosService,
+     private fb : FormBuilder
+  ) {
+    this.searchForm = this.fb.group({
+      busqueda : ['',Validators.required]
+    })
+   }
 
   ngOnInit(): void {
     this.getproduct()
   }
-  getproduct(){
 
+  getproduct(){
+    const busqueda : busqueda = {
+      busqueda : this.searchForm.get('busqueda')?.value
+    }
+    
     this.serviceProdd.getAllProduct().subscribe(
       data=>{
         this.listProduct = data
@@ -35,5 +46,22 @@ export class StoreComponent implements OnInit {
       }
     
       )
+
+      if(this.searchForm.valid){
+        console.log("hoka")
+        this.serviceProdd.search(busqueda).subscribe(
+          data=>{
+            this.listProduct = data
+    
+          },error=>{
+            swal.fire({
+              icon: 'error',
+              title: error,
+            
+            })
+          }
+        )
+      }
   }
+
 }

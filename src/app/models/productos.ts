@@ -88,3 +88,9 @@ export class productoinsert{
     }
     
 }
+export class busqueda {
+    busqueda : string 
+    constructor( busqueda : string){
+        this.busqueda = busqueda
+    }
+}
