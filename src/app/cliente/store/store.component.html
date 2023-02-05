@@ -3,7 +3,7 @@
   <!-- Main content -->
   <section class="content">
       <div class="container-fluid">
-          <h2 class="text-center display-4">Search</h2>
+          <h2 class="text-center display-4">StayCloo Store</h2>
           <div class="row">
               <div class="col-md-8 offset-md-2">
                   <form [formGroup]="searchForm" (submit)="getproduct()">
@@ -30,7 +30,8 @@
       <div class="product-price">fecha :  {{product.fecha}}  </div>
       <div class="product-price"> Precio : $ {{product.precio}} COP  </div>
   
-      <li class="fa-solid fa-cart-shopping" routerLink="/home/compras" >Comprar</li>
+      <li class="fa-solid fa-cart-shopping"       [routerLink]="['/home/compras',(product.codigo_prod)]" >Comprar</li>
+
 
     </div>
       

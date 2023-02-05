@@ -9,9 +9,9 @@ import { LoginGuard } from '../guards/login.guard';
 const routes : Routes=[
   {path: 'home',component:ClienteComponent,
   children: [
-    {path:'store',component: StoreComponent},
+    {path:'store',component: StoreComponent,data:{titulo: 'store'}},
 
-    {path :'compras',component : CompraComponent,canActivate :[LoginGuard]},
+    {path :'compras/:id',component : CompraComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
 
   ]  
 }

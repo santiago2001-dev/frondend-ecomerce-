@@ -48,7 +48,6 @@ export class StoreComponent implements OnInit {
       )
 
       if(this.searchForm.valid){
-        console.log("hoka")
         this.serviceProdd.search(busqueda).subscribe(
           data=>{
             this.listProduct = data
