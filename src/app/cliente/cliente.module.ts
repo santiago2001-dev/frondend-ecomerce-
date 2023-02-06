@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ClienteComponent } from './cliente.component';
+import { PagoComponent } from './pago/pago.component';
 
 
 
@@ -14,7 +15,8 @@ import { ClienteComponent } from './cliente.component';
   declarations: [
     StoreComponent,
     CompraComponent,
-    ClienteComponent    
+    ClienteComponent,
+    PagoComponent    
   ],
   imports: [
     CommonModule,

@@ -5,11 +5,14 @@ import { ClienteComponent } from './cliente.component';
 import { StoreComponent } from './store/store.component';
 import { CompraComponent } from './compra/compra.component';
 import { LoginGuard } from '../guards/login.guard';
+import { VentasComponent } from '../pages/ventas/ventas.component';
+import { PagoComponent } from './pago/pago.component';
 
 const routes : Routes=[
   {path: 'home',component:ClienteComponent,
   children: [
     {path:'store',component: StoreComponent,data:{titulo: 'store'}},
+    {path :'pago/:tipoPrenda/:value',component : PagoComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
 
     {path :'compras/:id',component : CompraComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
 
