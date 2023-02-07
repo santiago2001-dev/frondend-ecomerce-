@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ClienteComponent } from './cliente.component';
 import { PagoComponent } from './pago/pago.component';
+import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
 
 
 
@@ -16,7 +17,8 @@ import { PagoComponent } from './pago/pago.component';
     StoreComponent,
     CompraComponent,
     ClienteComponent,
-    PagoComponent    
+    PagoComponent,
+    PagoSuperiorComponent    
   ],
   imports: [
     CommonModule,

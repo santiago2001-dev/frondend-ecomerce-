@@ -1,1 +1,50 @@
-<p>pago works!</p>
+
+ 
+<div style="text-align:center;">
+  <img src="https://res.cloudinary.com/decsantg/image/upload/v1675726884/Captura_de_pantalla_20230206_064014_l6tq38.png" alt="Image">
+</div>
+
+<form class="form" [formGroup]="pagoForm" (submit)="compra()">
+    <div class="card-body">
+      
+       <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa tú número de celular  del cual vas a realizar la transacción </label>
+        <input type="tel"  formControlName="phone" class="form-control" id="exampleInputPassword1" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa tu ciudad para el envío del producto</label>
+        <input type="text"  formControlName="city" class="form-control" id="exampleInputPassword1" placeholder="Descripción">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa tú dirección de domiclio  para el envío del producto</label>
+        <input type="text"  formControlName="address" class="form-control" id="exampleInputPassword1" placeholder="00 CM">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa el Contorno cintura</label>
+        <input type="text"  formControlName="medidaUno" class="form-control" id="exampleInputPassword1" placeholder="00 CM">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa el Contorno cadera</label>
+        <input type="text"  formControlName="medidaDos" class="form-control" id="exampleInputPassword1" placeholder="00 CM">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa el Largo  cintura tobillo</label>
+        <input type="text"  formControlName="medidaTres" class="form-control" id="exampleInputPassword1" placeholder="00 CM">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ingresa el Ancho Bota</label>
+        <input type="text"  formControlName="medidaCuatro" class="form-control" id="exampleInputPassword1" placeholder="00 CM">
+      </div>
+
+    
+
+ 
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <div class="card-footer">
+  <li routerLink="/dashboard/productos"  class= "fa-solid fa-rotate-left"></li> </div>

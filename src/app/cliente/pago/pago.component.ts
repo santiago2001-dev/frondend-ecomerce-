@@ -4,6 +4,8 @@ import { infoPago,mdedidas } from 'src/app/models/pago';
 import { Router,ActivatedRoute } from '@angular/router';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { PagoService } from 'src/app/services/pago.service';
+import decode from 'jwt-decode';
+
 @Component({
   selector: 'app-pago',
   templateUrl: './pago.component.html',
@@ -13,7 +15,8 @@ export class PagoComponent implements OnInit {
 pagoForm : FormGroup
 tipoPrenda : string  |any
 value : string | any
-
+token : string |any
+tokenDes : string |any
   constructor(
     private pagoServ : PagoService,
     private fb : FormBuilder,
@@ -23,11 +26,7 @@ value : string | any
    {
      this.pagoForm = this.fb.group(
        {
-         "docType": ['',Validators.required],
-         "document": ['',[Validators.max(10), Validators.min(1)],Validators.required],
-         "name": ['',Validators.required],
-         "lastName": ['',Validators.required],
-         "email": ['',[Validators.required,Validators.email]],
+        
          "phone": ['',[Validators.max(10), Validators.min(1),Validators.required]],
          "city": ['',Validators.required],
          "address": ['',Validators.required],
@@ -44,19 +43,22 @@ value : string | any
   }
 
   ngOnInit(): void {
-    console.log(this.tipoPrenda,this.value)
+    swal.fire('En stay queremos crear tú prenda a tú medida por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
+
   }
 
  compra(){
   
-
-  const objeto = {
+  this.token = localStorage.getItem('token')
+ this.tokenDes = decode(this.token);
+ const {email,names,documento} = this.tokenDes;
+ const objeto = {
     infoPago: new infoPago(
-      this.pagoForm.get('docType')?.value,
-      this.pagoForm.get('document')?.value,
-      this.pagoForm.get('name')?.value,
-      this.pagoForm.get('lastName')?.value,
-      this.pagoForm.get('email')?.value,
+      "CC",
+      documento,
+      names,
+      names,
+      email,
       'CO',
       this.pagoForm.get('phone')?.value,
        'CO',
@@ -68,20 +70,41 @@ value : string | any
        "",
        false),
       
-    medidas: new mdedidas(23, 23, 23, 23)
+    medidas: new mdedidas(
+      this.pagoForm.get('medidaUno')?.value,
+      this.pagoForm.get('medidaDos')?.value,
+      this.pagoForm.get('medidaTres')?.value,
+      this.pagoForm.get('medidaCuatro')?.value,
+
+    )
   };
 
        this.pagoServ.pago(objeto).subscribe(
         data=>{
          if(data.titleResponse == "Error"){
-            console.log(data.textResponse)
+          swal.fire({
+            icon: 'error',
+            title: data.titleResponse,
+          
+          })
 
          }else{
-          console.log(data.textResponse)
+          swal.fire({
+            position: 'center',
+            icon: 'success',
+            title:  data.titleResponse,
+            showConfirmButton: false,
+            timer: 1500
+          })
 
          }
+
         },error=>{
-          console.log(error)
+          swal.fire({
+            icon: 'error',
+            title: error,
+          
+          })
         }
        )
  }

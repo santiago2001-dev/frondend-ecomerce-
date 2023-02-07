@@ -1,53 +1,80 @@
-<div  *ngFor="let prod of listProduct" class="card-body">
-    <div class="row">
-      <div class="col-12 col-sm-6">
-        <h3 class="d-inline-block d-sm-none">{{prod.titulo}}</h3>
 
-        <div class="col-12">
-          <img src="{{prod.imagenUno}}" class="product-image" alt="Product Image">
-        </div>
-        <div class="col-12 product-image-thumbs">
-          <div class="product-image-thumb"><img src="{{prod.imagenDos}}" alt="Product Image"></div>
-          <div class="product-image-thumb"><img src="{{prod.imagenTres}}" alt="Product Image"></div>
-       
+
+<div  *ngFor="let prod of listProduct" class = "card-wrapper">
+  <div class = "card">
+    <!-- card left -->
+    <div class = "product-imgs">
+      <div class = "img-display">
+        <div class = "img-showcase">
+          <img src = "{{prod.imagenUno}}" alt = "shoe image">
+          <img src = "{{prod.imagenDos}}" alt = "shoe image">
+          <img src = "{{prod.imagenTres}}" alt = "shoe image">
+
         </div>
       </div>
-      <div class="col-12 col-sm-6">
+      <div class = "img-select">
+        <div class = "img-item">
+          <a href = "#" data-id = "1">
+            <img src = "{{prod.imagenDos}}" alt = "shoe image">
 
-        <h3 class="my-3">{{prod.sinopsis}}</h3>
-
-        <hr>
-         <div class="bg-gray py-2 px-3 mt-4">
-          <h2 class="mb-0">
-           $ {{prod.precio}} COP
-            </h2>
-          
+          </a>
         </div>
+        <div class = "img-item">
+          <a href = "#" data-id = "2">
+            <img src = "{{prod.imagenTres}}" alt = "shoe image">
 
-        <div class="mt-4">
-          <div [routerLink]="['/home/pago',(prod.titulo),(prod.precio)]" class="btn btn-primary btn-lg btn-flat">
-            <li class="fas fa-cart-plus fa-lg mr-2"></li>
-              Comprar
-            </div>
+          </a>
+        </div>
+        <div class = "img-item">
+          <a href = "#" data-id = "3">
+            <img src = "{{prod.imagenUno}}" alt = "shoe image">
 
+          </a>
+        </div>
        
-
-        <div class="mt-4 product-share">
-          <a href="#" class="text-gray">
-            <i class="fab fa-facebook-square fa-2x"></i>
-          </a>
-          <a href="#" class="text-gray">
-            <i class="fab fa-twitter-square fa-2x"></i>
-          </a>
-          <a href="#" class="text-gray">
-            <i class="fas fa-envelope-square fa-2x"></i>
-          </a>
-          <a href="#" class="text-gray">
-            <i class="fas fa-rss-square fa-2x"></i>
-          </a>
-        </div>
-
       </div>
     </div>
- 
+    <!-- card right -->
+    <div class = "product-content">
+      <h2 class = "product-title">{{prod.titulo}}</h2>
+     
+      <div class = "product-price">
+        <p class = "new-price"> Precio: <span>${{prod.precio}} COP</span></p>
+
+      </div>
+
+      <div class = "product-detail">
+        <h2>about this item: </h2>
+        <p>{{prod.sinopsis}}</p>    
+      </div>
+
+      <div class = "purchase-info">
+        <button type = "button" class = "btn">
+          paga con tarjeta de credito <i class = "fas fa-shopping-cart"></i>
+        </button>
+        <button routerLink="{{redirec}}/{{prod.titulo}}/{{prod.precio}}" type = "button" class = "btn">paga con daviplata</button>
+      </div>
+
+      <div class = "social-links">
+        <p>Share At: </p>
+        <a href = "#">
+          <i class = "fab fa-facebook-f"></i>
+        </a>
+        <a href = "#">
+          <i class = "fab fa-twitter"></i>
+        </a>
+        <a href = "#">
+          <i class = "fab fa-instagram"></i>
+        </a>
+        <a href = "#">
+          <i class = "fab fa-whatsapp"></i>
+        </a>
+        <a href = "#">
+          <i class = "fab fa-pinterest"></i>
+        </a>
+      </div>
+    </div>
   </div>
+</div>
+
+<br><br>

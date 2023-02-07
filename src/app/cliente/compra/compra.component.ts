@@ -12,6 +12,7 @@ import swal from 'sweetalert2';
 export class CompraComponent implements OnInit {
   listProduct : producto[] = []
   Id : String |null;
+  redirec = ""
 
   constructor(
     private router : Router,
@@ -30,7 +31,14 @@ getProductbyid(){
   this.productServ.getProductByid(this.Id).subscribe(
     data=>{
       this.listProduct = data
-      console.log(data)
+      console.log(data[0].tipo)
+      if(data[0].tipo == "inferior"){
+        console.log("hh")
+        this.redirec = "/home/pago"
+      }else{
+        this.redirec = "/home/pagosup"
+
+      }
 
     },error=>{
       swal.fire({
