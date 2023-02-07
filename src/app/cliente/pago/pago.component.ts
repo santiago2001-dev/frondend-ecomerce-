@@ -17,6 +17,7 @@ tipoPrenda : string  |any
 value : string | any
 token : string |any
 tokenDes : string |any
+dataError : string |any
   constructor(
     private pagoServ : PagoService,
     private fb : FormBuilder,
@@ -43,7 +44,7 @@ tokenDes : string |any
   }
 
   ngOnInit(): void {
-    swal.fire('En stay queremos crear tú prenda a tú medida por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
+    swal.fire('En stay queremos crear tú prenda a tú medida, por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
 
   }
 
@@ -81,25 +82,28 @@ tokenDes : string |any
 
        this.pagoServ.pago(objeto).subscribe(
         data=>{
-         if(data.titleResponse == "Error"){
+       
+         if(data.success == false){
+          data.data.errors.forEach((element: any) => {
+            console.log(element)
+            this.dataError = element.errorMessage
+
+          
+            
+          });
           swal.fire({
             icon: 'error',
-            title: data.titleResponse,
+            title: `${data.textResponse} , ${this.dataError}`,
           
           })
+       
 
          }else{
-          swal.fire({
-            position: 'center',
-            icon: 'success',
-            title:  data.titleResponse,
-            showConfirmButton: false,
-            timer: 1500
-          })
-
+          swal.fire(data.textResponse)
          }
 
         },error=>{
+          console.log(error)
           swal.fire({
             icon: 'error',
             title: error,
