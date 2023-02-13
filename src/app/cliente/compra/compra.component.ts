@@ -33,10 +33,9 @@ getProductbyid(){
       this.listProduct = data
       console.log(data[0].tipo)
       if(data[0].tipo == "inferior"){
-        console.log("hh")
         this.redirec = "/home/pago"
       }else{
-        this.redirec = "/home/pagosup"
+        this.redirec = "/home/pagoSup"
 
       }
 

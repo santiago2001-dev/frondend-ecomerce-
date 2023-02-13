@@ -16,4 +16,11 @@ server = environment.servidor
       let url =`${this.server}product/compra`
       return  this.http.post(url,info)
     }
+
+    confirmPago(opt:any):Observable<any>{
+      let url =`${this.server}product/confirmarPago`
+      return this.http.post(url,opt);
+
+
+    }
 }

@@ -1,1 +1,68 @@
-<p>pago-superior works!</p>
+
+ <div class="modernForm">
+        <div class="imageSection">
+          <div class="image">
+            <div class="overlay"></div>
+            <img src="https://res.cloudinary.com/decsantg/image/upload/v1676307908/medidasSuperior_j9vehm.png" width="250" height="800"alt="pexels-yuri-manei-2272854">
+          </div>
+         
+     
+        </div>
+        <div class="contactForm">
+          <form [formGroup]="pagoForm" (submit)="compra()" >
+            <div class="name">
+              <label for="fullName">Ingresa tú número de celular  del cual vas a realizar la transacción</label>
+              
+              <input type="tel"  formControlName="phone"  id="fullName"  required/>
+              <div class="iconName"><i class="fa-solid fa-phone"></i></div>
+            </div>
+            <div class="name">
+              <label for="email">Ingresa tu ciudad para el envío del producto</label>
+              <input type="text" formControlName="city" name="email" id="email" required />
+              <div class="iconName"><i class="fa-solid fa-city"></i></div>
+            </div>
+  
+       
+            <div class="name">
+              <label for="Password">Ingresa tú dirección de domiclio  para el envío del producto</label>
+              <input type="text" formControlName="address" name="password" id="password" required />
+              <div class="iconName"><i class="fa-solid fa-location-dot"></i></div>
+            </div>
+  
+            <div class="name">
+              <label for="Password">Ingresa el ancho espalda</label>
+              <input type="number" formControlName="medidaUno" name="password" id="password" required />
+              <div class="iconName"><i class="fa-solid fa-ruler"></i></div>
+            </div>
+            <div class="name">
+              <label for="Password">Ingresa la medida de hombro</label>
+              <input type="number" formControlName="medidaDos" name="password" id="password" required />
+              <div class="iconName"><i class="fa-solid fa-ruler"></i></div>
+            </div>
+            <div class="name">
+              <label for="Password">Ingresa la medida de tronco</label>
+              <input type="number" formControlName="medidaTres" name="password" id="password" required />
+              <div class="iconName"><i class="fa-solid fa-ruler"></i></div>
+            </div>
+            <div class="name">
+              <label for="Password">Ingresa el lagro brazo</label>
+              <input type="number" formControlName="medidaCuatro" name="password" id="password" required />
+              <div class="iconName"><i class="fa-solid fa-ruler"></i></div>
+            </div>
+            <div class="name">
+                <label for="Password">Ingresa el contorno cintura</label>
+                <input type="number" formControlName="medidaCinco" name="password" id="password" required />
+                <div class="iconName"><i class="fa-solid fa-ruler"></i></div>
+              </div>
+          
+            <input type="submit" value="Pago">
+          </form>
+         
+        </div>
+      </div>
+  <br><br>
+  
+   
+  
+  
+  

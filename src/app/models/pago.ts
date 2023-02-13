@@ -67,12 +67,35 @@ export  class infoPago {
              this.medidaUno =medidaUno
              this.medidaDos= medidaDos
               this.medidaTres=medidaTres
-                this.medidaCuatro=medidaCuatro            }
+                this.medidaCuatro=medidaCuatro           
+             }
 
         }
 
    
-    
+        export class mdedidasSup {
+            medidaUno :number
+            medidaDos: number
+            medidaTres: number
+            medidaCuatro: number
+            medidaCinco: number
+            constructor(
+                medidaUno :number,
+                medidaDos: number,
+                medidaTres: number,
+                medidaCuatro: number,
+                medidaCinco: number
+            ){
+             this.medidaUno =medidaUno
+             this.medidaDos= medidaDos
+              this.medidaTres=medidaTres
+             this.medidaCuatro=medidaCuatro    
+             this.medidaCinco = medidaCinco
+
+
+             }
+
+        }
 
         
         

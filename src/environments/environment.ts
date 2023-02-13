@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  servidor : 'http://localhost:3000/api/'
+  servidor : 'https://stay-back.herokuapp.com/api/'
 };
 
 /*

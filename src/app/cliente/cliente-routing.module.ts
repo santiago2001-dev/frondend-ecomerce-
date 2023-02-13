@@ -7,13 +7,14 @@ import { CompraComponent } from './compra/compra.component';
 import { LoginGuard } from '../guards/login.guard';
 import { VentasComponent } from '../pages/ventas/ventas.component';
 import { PagoComponent } from './pago/pago.component';
+import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
 
 const routes : Routes=[
   {path: 'home',component:ClienteComponent,
   children: [
     {path:'store',component: StoreComponent,data:{titulo: 'store'}},
     {path :'pago/:tipoPrenda/:value',component : PagoComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
-
+    {path :'pagoSup/:tipoPrenda/:value',component : PagoSuperiorComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
     {path :'compras/:id',component : CompraComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
 
   ]  

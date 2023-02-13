@@ -28,7 +28,7 @@ dataError : string |any
      this.pagoForm = this.fb.group(
        {
         
-         "phone": ['',[Validators.max(10), Validators.min(1),Validators.required]],
+         "phone": ['',],
          "city": ['',Validators.required],
          "address": ['',Validators.required],
          "medidaUno" :['',Validators.required],
@@ -44,6 +44,8 @@ dataError : string |any
   }
 
   ngOnInit(): void {
+    
+
     swal.fire('En stay queremos crear tú prenda a tú medida, por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
 
   }
@@ -79,40 +81,83 @@ dataError : string |any
 
     )
   };
-
-       this.pagoServ.pago(objeto).subscribe(
-        data=>{
-       
-         if(data.success == false){
-          data.data.errors.forEach((element: any) => {
-            console.log(element)
-            this.dataError = element.errorMessage
-
-          
+      if(this.pagoForm.invalid){
+        swal.fire({
+          icon: 'error',
+          title:'campo invalido verifica por favor ',
+        
+        })
+      
+      }else{
+        this.pagoServ.pago(objeto).subscribe(
+          data=>{
+         
+           if(data.success == false){
+            data.data.errors.forEach((element: any) => {
+              console.log(element)
+              this.dataError = element.errorMessage
+  
+              });
+              swal.fire({
+              icon: 'error',
+              title: `${data.textResponse} , ${this.dataError}`,
             
-          });
-          swal.fire({
-            icon: 'error',
-            title: `${data.textResponse} , ${this.dataError}`,
-          
-          })
+            })
+         
+  
+           }else{
+            swal.fire(data.textResponse)
+            
+            this.confirmPago()
+  
+           }
+  
+          },error=>{
+            console.log(error)
+            swal.fire({
+              icon: 'error',
+              title: error,
+            
+            })
+          }
+         )
        
-
-         }else{
-          swal.fire(data.textResponse)
-         }
-
-        },error=>{
-          console.log(error)
-          swal.fire({
-            icon: 'error',
-            title: error,
-          
-          })
-        }
-       )
- }
+      }
+}
       
 
 
+confirmPago(){
+  let  opt = window.prompt('Ingresa el código que fue enviado ', );
+  this.pagoServ.confirmPago(opt).subscribe(
+    data=>{
+      if(data.success == false){
+        data.data.errors.forEach((element: any) => {
+          console.log(element)
+          this.dataError = element.errorMessage
+
+          });
+          swal.fire({
+          icon: 'error',
+          title: `${data.textResponse} , ${this.dataError}`,
+        
+        })
+     
+
+       }else{
+        swal.fire(data.textResponse)
+        
+      }
+        },error=>{
+            console.log(error)
+            swal.fire({
+              icon: 'error',
+              title: error,
+            
+            })
+          }
+  )
+
+
+}
 }
