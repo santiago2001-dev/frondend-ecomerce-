@@ -8,6 +8,8 @@ import { LoginGuard } from '../guards/login.guard';
 import { VentasComponent } from '../pages/ventas/ventas.component';
 import { PagoComponent } from './pago/pago.component';
 import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
+import { RegistroComprasComponent } from './registro-compras/registro-compras.component';
+import { HomeComponent } from './home/home.component';
 
 const routes : Routes=[
   {path: 'home',component:ClienteComponent,
@@ -16,6 +18,8 @@ const routes : Routes=[
     {path :'pago/:tipoPrenda/:value',component : PagoComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
     {path :'pagoSup/:tipoPrenda/:value',component : PagoSuperiorComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
     {path :'compras/:id',component : CompraComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
+    {path :'registro-compras',component : RegistroComprasComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
+    {path :'g',component : HomeComponent,data:{titulo:'home'}},
 
   ]  
 }

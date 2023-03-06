@@ -26,26 +26,45 @@
              with font-awesome or any other icon font library -->
 
 
-             
+             <!-- {titulo : 'Usuarios',url : 'dashboard/usuarios',icono : 'fa fa-users'},
+             {titulo : 'Productos',url : 'dashboard/productos',icono : 'fa-solid fa-cart-shopping'},
+             {titulo : 'Ventas',url : 'dashboard/ventas',icono : 'fa-solid fa-money-bill-1-wave'},        -->
          
 
       <div *ngIf="ocultar">
-        <div *ngFor="let item of menuItems">
-       
-        <li class="nav-item" *ngFor="let submenu of item.submenu">
-          <a routerLink="{{submenu.url}}" class="nav-link" style="cursor :pointer;">
-            <i class="{{submenu.icono}}"></i>
-            <p class="ml-2">{{submenu.titulo}}</p>
+
+        <li class="nav-item">
+          <a  class="nav-link" style="cursor: pointer;" routerLink="/dashboard/usuarios">
+            <i class="fa fa-users"></i>
+              <p class="ml-2">Usuarios</p>
           </a>
-        </li>
-     </div>
-    
+          <li class="nav-item">
+            <a  class="nav-link" style="cursor: pointer;" routerLink="/dashboard/productos">
+              <i class="fa-solid fa-cart-shopping"></i>
+                <p class="ml-2">Productos</p>
+            </a>
+            <li class="nav-item">
+              <a  class="nav-link" style="cursor: pointer;" routerLink="/dashboard/ventas">
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                  <p class="ml-2">Ventas</p>
+              </a>
+          
+          <!-- <div *ngFor="let item of menuItems"> -->
+        
+          <!-- <li class="nav-item" *ngFor="let submenu of item.submenu">
+            <a routerLink="{{submenu.url}}" class="nav-link" style="cursor :pointer;">
+              <i class="{{submenu.icono}}"></i>
+              <p class="ml-2">{{submenu.titulo}}</p>
+            </a>
+          </li> -->
+      <!-- </div> -->
+      
     </div>
      
  
 
     <li class="nav-item">
-      <a  class="nav-link" style="cursor: pointer;" routerLink="/home">
+      <a  class="nav-link" style="cursor: pointer;" routerLink="/home/g">
         <i class="fa-solid fa-house"></i>
           <p class="ml-2">home</p>
       </a>
@@ -59,7 +78,7 @@
       </a>
 
       <li class="nav-item">
-        <a  class="nav-link" style="cursor: pointer;"(click)="logiout()">
+        <a  class="nav-link" style="cursor: pointer;" routerLink="/home/registro-compras" >
          <i class="fa-solid fa-cart-shopping"></i>
          <p class="ml-2">Mis Compras</p>
         </a>

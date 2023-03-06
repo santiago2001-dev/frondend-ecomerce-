@@ -9,6 +9,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ClienteComponent } from './cliente.component';
 import { PagoComponent } from './pago/pago.component';
 import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
+import { RegistroComprasComponent } from './registro-compras/registro-compras.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -18,7 +20,9 @@ import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
     CompraComponent,
     ClienteComponent,
     PagoComponent,
-    PagoSuperiorComponent    
+    PagoSuperiorComponent,
+    RegistroComprasComponent,
+    HomeComponent    
   ],
   imports: [
     CommonModule,

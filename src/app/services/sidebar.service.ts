@@ -9,9 +9,9 @@ export class SidebarService {
     {
       
       submenu:[
-        {titulo : 'Usuarios',url : 'usuarios',icono : 'fa fa-users'},
-        {titulo : 'Productos',url : 'productos',icono : 'fa-solid fa-cart-shopping'},
-        {titulo : 'Ventas',url : 'ventas',icono : 'fa-solid fa-money-bill-1-wave'},
+        {titulo : 'Usuarios',url : 'dashboard/usuarios',icono : 'fa fa-users'},
+        {titulo : 'Productos',url : 'dashboard/productos',icono : 'fa-solid fa-cart-shopping'},
+        {titulo : 'Ventas',url : 'dashboard/ventas',icono : 'fa-solid fa-money-bill-1-wave'},
       ]
     }
   ]
