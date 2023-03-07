@@ -22,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     PagoComponent,
     PagoSuperiorComponent,
     RegistroComprasComponent,
-    HomeComponent    
+    HomeComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,12 @@ import { HomeComponent } from './home/home.component';
   exports:[
     StoreComponent,
     CompraComponent,
-    ClienteComponent
+    ClienteComponent,
+    PagoComponent,
+    PagoSuperiorComponent,
+    RegistroComprasComponent,
+    HomeComponent,
+
   ]
 })
 export class ClienteModule { }

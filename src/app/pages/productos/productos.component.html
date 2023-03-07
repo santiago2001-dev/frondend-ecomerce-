@@ -1,3 +1,4 @@
+<br><br>
 <nav class="menu">
   <ul>
     <li routerLink="/dashboard/add-product"><span>Agregar</span></li>
@@ -12,6 +13,7 @@
     <h3 class="product-name">{{product.titulo}}</h3>
     <p class="product-price">{{product.sinopsis}}</p>
     <div class="product-price">fecha :  {{product.fecha}}  </div>
+    <div class="product-price">genero :  {{product.genero}}  </div>
     <div class="product-price"> Precio : $ {{product.precio}} COP  </div>
     <li class="fa-solid fa-trash"  (click)="deleteProduct(product.codigo_prod)"></li>
     <br>

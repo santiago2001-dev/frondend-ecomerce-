@@ -28,6 +28,7 @@ export class AddProdComponent implements OnInit {
       precio : ['',Validators.required],
       tipo : ['',Validators.required],
       sinopsis : ['',Validators.required],
+      genero : ['',Validators.required],
       imagenUno : ['',Validators.required],
       imagenDos : ['',Validators.required],
       imagenTres :['',Validators.required],
@@ -55,7 +56,8 @@ export class AddProdComponent implements OnInit {
         imagenUno : this.imagenes[2],
         imagenDos :this.imagenes[1],
         imagenTres : this.imagenes[0],
-        sinopsis : this.productForm.get('sinopsis')?.value
+        sinopsis : this.productForm.get('sinopsis')?.value,
+        genero : this.productForm.get('genero')?.value
         
       }
       this.prudctServ.insertProduct(producto).subscribe(

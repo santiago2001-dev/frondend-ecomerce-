@@ -5,6 +5,7 @@ export class producto{
     tipo : string 
     sinopsis : string
     fecha :string
+    genero : string
     imagenUno : string
     imagenDos : string
     imagenTres : string 
@@ -15,6 +16,7 @@ export class producto{
         tipo : string ,
         fecha :string,
         sinopsis : string,
+        genero : string,
          imagenUno : string,
         imagenDos : string,
         imagenTres : string, ){
@@ -27,6 +29,7 @@ export class producto{
             this.imagenUno = imagenUno,
             this.imagenDos = imagenDos,
             this.imagenTres = imagenTres
+            this.genero = genero
 
 
 
@@ -64,6 +67,7 @@ export class productoinsert{
     precio :number
     tipo : string 
     sinopsis : string
+    genero : string 
     imagenUno : string
     imagenDos : string
     imagenTres : string 
@@ -72,6 +76,7 @@ export class productoinsert{
         precio :number,
         tipo : string ,
         sinopsis : string,
+        genero : string,
          imagenUno : string,
         imagenDos : string,
         imagenTres : string, ){
@@ -82,7 +87,7 @@ export class productoinsert{
             this.imagenUno = imagenUno,
             this.imagenDos = imagenDos,
             this.imagenTres = imagenTres
-
+            this.genero = genero
 
 
     }

@@ -28,6 +28,37 @@ export class StoreComponent implements OnInit {
     this.getproduct()
   }
 
+  
+  femenino(){
+    const busqueda : busqueda = {
+      busqueda : 'femenino'
+    }
+    this.serviceProdd.search(busqueda).subscribe(
+      data=>{
+      this.listProduct = data        
+      },error=>{
+        swal.fire({
+               icon: 'error',
+                title: error,
+               })
+      }
+    )
+    }
+  masculino(){
+    const busqueda : busqueda = {
+      busqueda : 'masculino'
+    }
+    this.serviceProdd.search(busqueda).subscribe(
+      data=>{
+      this.listProduct = data        
+      },error=>{
+        swal.fire({
+               icon: 'error',
+                title: error,
+               })
+      }
+    )
+    }
   getproduct(){
     const busqueda : busqueda = {
       busqueda : this.searchForm.get('busqueda')?.value

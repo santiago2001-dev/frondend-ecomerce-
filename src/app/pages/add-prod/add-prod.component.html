@@ -1,5 +1,6 @@
 
-  <form class="form" [formGroup]="productForm" (submit)="addProduct()">
+
+ <form class="form" [formGroup]="productForm" (submit)="addProduct()">
     <div class="card-body">
       <div class="form-group">
 
@@ -20,6 +21,14 @@
         <select  formControlName="tipo" class="custom-select form-control-border" id="exampleSelectBorder">
           <option>Superior</option>
           <option>Inferior</option>
+        
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelectBorder">Selecciona el genero de la prenda</label>
+        <select  formControlName="genero" class="custom-select form-control-border" id="exampleSelectBorder">
+          <option>masculino</option>
+          <option>femenino</option>
         
         </select>
       </div>

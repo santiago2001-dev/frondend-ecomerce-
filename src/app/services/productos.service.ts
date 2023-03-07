@@ -32,6 +32,12 @@ export class ProductosService {
       return this.http.post(url,busqueda)
     }
 
+    categoria(busqueda :any):Observable<any>{
+
+      let url  = `${this.server}product/categoria`
+      return this.http.post(url,busqueda)
+    }
+
 
     insertProduct(producto : productoinsert):Observable<any>{
       let url  = `${this.server}product`
