@@ -5,12 +5,14 @@ import decode from 'jwt-decode';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import {PagoPseService}from 'src/app/services/pago-pse.service'
+import { bank } from 'src/app/models/bank';
 @Component({
   selector: 'app-pago-pse',
   templateUrl: './pago-pse.component.html',
   styleUrls: ['./pago-pse.component.css']
 })
 export class PagoPseComponent implements OnInit {
+  listBank : bank [] =[]
   pagoForm : FormGroup
   tipoPrenda : string  |any
   value : string | any
@@ -50,7 +52,15 @@ export class PagoPseComponent implements OnInit {
 
 
 getBank(){
-  
+  this.pagoServ.getBanks().subscribe(
+    data=>{
+      this.listBank = data
+
+    },error =>{
+        
+    }
+    
+  )
 }
   compra(){
     this.token = localStorage.getItem('token')

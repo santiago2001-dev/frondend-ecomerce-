@@ -15,7 +15,7 @@ export class PagoPseService {
   ) { }
 
 
-  getBanks(){
+  getBanks():Observable<any>{
     let url =`${this.server}pse`
     return this.http.get(url)
 
