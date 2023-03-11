@@ -10,13 +10,18 @@ import { PagoComponent } from './pago/pago.component';
 import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
 import { RegistroComprasComponent } from './registro-compras/registro-compras.component';
 import { HomeComponent } from './home/home.component';
+import { PagoPseComponent } from './pago-pse/pago-pse.component';
+import { PagoPseSuperiorComponent } from './pago-pse-superior/pago-pse-superior.component';
 
 const routes : Routes=[
   {path: 'home',component:ClienteComponent,
   children: [
     {path:'store',component: StoreComponent,data:{titulo: 'store'}},
     {path :'pago/:tipoPrenda/:value',component : PagoComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
-    {path :'pagoSup/:tipoPrenda/:value',component : PagoSuperiorComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
+    {path :'pagoPse/:tipoPrenda/:value',component : PagoPseComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
+
+    {path :'pagoSupPse/:tipoPrenda/:value',component : PagoPseSuperiorComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
+    
     {path :'compras/:id',component : CompraComponent,data:{titulo:'product'}},
     {path :'registro-compras',component : RegistroComprasComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
     {path :'g',component : HomeComponent,data:{titulo:'home'}},

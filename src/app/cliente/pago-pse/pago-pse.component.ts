@@ -46,7 +46,7 @@ export class PagoPseComponent implements OnInit {
 
   ngOnInit(): void {
     swal.fire('En stay queremos crear tú prenda a tú medida, por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
-
+    this.getBank();
 
   }
 
