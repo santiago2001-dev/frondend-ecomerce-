@@ -66,8 +66,7 @@ dataError : string |any
          'COP',
          this.tipoPrenda,
         this.value,
-         "",
-         false),
+         ""),
         
       medidas: new mdedidasSup(
         this.pagoForm.get('medidaUno')?.value,
@@ -105,7 +104,7 @@ dataError : string |any
        }else{
         swal.fire(data.textResponse)
         
-      
+        this.confirmPago();
 
        }
 
@@ -140,7 +139,6 @@ dataError : string |any
   
          }else{
           swal.fire(data.textResponse)
-          this.confirmPago()
           
         }
           },error=>{

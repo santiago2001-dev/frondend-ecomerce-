@@ -13,7 +13,6 @@ export  class infoPago {
         description: string
         value: string
         methodConfirmation:string
-        testMode :boolean
         
         constructor(  
             docType: string,
@@ -30,7 +29,6 @@ export  class infoPago {
             description: string,
             value: string,
             methodConfirmation:string,
-            testMode :boolean
             ){
                 this.docType= docType
                 this.document= document
@@ -46,7 +44,6 @@ export  class infoPago {
                 this.description= description
                 this.value= value
                 this.methodConfirmation= methodConfirmation
-                this.testMode = testMode
             }
           
 

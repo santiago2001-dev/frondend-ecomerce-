@@ -70,8 +70,7 @@ dataError : string |any
        'COP',
        this.tipoPrenda,
       this.value,
-       "",
-       false),
+       ""),
       
     medidas: new mdedidas(
       this.pagoForm.get('medidaUno')?.value,

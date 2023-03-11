@@ -49,10 +49,13 @@
       </div>
 
       <div class = "purchase-info">
-        <button type = "button" class = "btn">
-          paga con tarjeta de credito 
+        <button routerLink="{{redirec}}/{{prod.titulo}}/{{prod.precio}}" type = "button" class = "btn">
+
+        paga con PSE
         </button>
-        <button routerLink="{{redirec}}/{{prod.titulo}}/{{prod.precio}}" type = "button" class = "btn">paga con daviplata</button>
+        
+        <button routerLink="{{redirec}}/{{prod.titulo}}/{{prod.precio}}" type = "button" class = "btn">
+          paga con daviplata</button>
       </div>
 
 

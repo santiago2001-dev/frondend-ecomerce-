@@ -11,6 +11,8 @@ import { PagoComponent } from './pago/pago.component';
 import { PagoSuperiorComponent } from './pago-superior/pago-superior.component';
 import { RegistroComprasComponent } from './registro-compras/registro-compras.component';
 import { HomeComponent } from './home/home.component';
+import { PagoPseComponent } from './pago-pse/pago-pse.component';
+import { PagoPseSuperiorComponent } from './pago-pse-superior/pago-pse-superior.component';
 
 
 
@@ -23,6 +25,8 @@ import { HomeComponent } from './home/home.component';
     PagoSuperiorComponent,
     RegistroComprasComponent,
     HomeComponent,
+    PagoPseComponent,
+    PagoPseSuperiorComponent,
   ],
   imports: [
     CommonModule,

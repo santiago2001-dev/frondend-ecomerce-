@@ -17,7 +17,7 @@ const routes : Routes=[
     {path:'store',component: StoreComponent,data:{titulo: 'store'}},
     {path :'pago/:tipoPrenda/:value',component : PagoComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
     {path :'pagoSup/:tipoPrenda/:value',component : PagoSuperiorComponent,canActivate :[LoginGuard],data:{titulo:'pago'}},
-    {path :'compras/:id',component : CompraComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
+    {path :'compras/:id',component : CompraComponent,data:{titulo:'product'}},
     {path :'registro-compras',component : RegistroComprasComponent,canActivate :[LoginGuard],data:{titulo:'product'}},
     {path :'g',component : HomeComponent,data:{titulo:'home'}},
 
