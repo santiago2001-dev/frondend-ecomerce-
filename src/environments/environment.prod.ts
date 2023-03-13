@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  servidor : ''
+  servidor : 'https://stay-back.herokuapp.com/api/'
+
 };
