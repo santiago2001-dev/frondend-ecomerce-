@@ -13,7 +13,7 @@ export class CompraComponent implements OnInit {
   listProduct : producto[] = []
   Id : String |null;
   redirec = ""
-  redirecPse =""
+  redirecPse :String =  ""
   constructor(
     private router : Router,
     private productServ : ProductosService,
@@ -32,7 +32,7 @@ getProductbyid(){
     data=>{
       this.listProduct = data
       console.log(data[0].tipo)
-      if(data[0].tipo == "inferior"){
+      if(data[0].tipo == "Inferior"){
         this.redirec = "/home/pago"
         this.redirecPse = "/home/pagoPse"
       }else{

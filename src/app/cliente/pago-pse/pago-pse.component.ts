@@ -54,10 +54,10 @@ export class PagoPseComponent implements OnInit {
 getBank(){
   this.pagoServ.getBanks().subscribe(
     data=>{
-      this.listBank = data
+      this.listBank = data.data
 
     },error =>{
-        
+        console.log(error)
     }
     
   )
@@ -108,23 +108,18 @@ getBank(){
     }else{
       this.pagoServ.pago(objeto).subscribe(
         data=>{
-       
-         if(data.success == false){
-          data.data.errors.forEach((element: any) => {
-            console.log(element)
-            this.dataError = element.errorMessage
-
-            });
-            swal.fire({
+          if(data.success == false){
+          swal.fire({
             icon: 'error',
-            title: `${data.textResponse} , ${this.dataError}`,
+            title: `${data.textResponse}`,
           
           })
        
 
          }else{
-          swal.fire(data.textResponse)
           
+          swal.fire('Seras redirigido a la pagina de tú banco gracias')
+          window.location.href =data.data.urlbanco
 
          }
 

@@ -35,6 +35,8 @@ export class PagoPseSuperiorComponent implements OnInit {
         "medidaDos": ['',Validators.required],
         "medidaTres": ['',Validators.required],
         "medidaCuatro": ['',Validators.required],
+        "medidaCinco": ['',Validators.required],
+
       }
     )
     this.tipoPrenda = this.aRouter.snapshot.paramMap.get('tipoPrenda')
@@ -42,16 +44,16 @@ export class PagoPseSuperiorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    swal.fire('En stay queremos crear tú prenda a tú medida, por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
+   swal.fire('En stay queremos crear tú prenda a tú medida, por eso te pediremos unas medidas te pondremos una imagen para que te guies ')
     this.getBank();
   }
+  
   getBank(){
     this.pagoServ.getBanks().subscribe(
       data=>{
-        this.listBank = data
-  
+        this.listBank = data.data
       },error =>{
-          
+          console.log(error)
       }
       
     )
@@ -107,22 +109,17 @@ export class PagoPseSuperiorComponent implements OnInit {
         data=>{
        
          if(data.success == false){
-          data.data.errors.forEach((element: any) => {
-            console.log(element)
-            this.dataError = element.errorMessage
-
-            });
+       
             swal.fire({
             icon: 'error',
-            title: `${data.textResponse} , ${this.dataError}`,
+            title: `${data.textResponse}`,
           
           })
        
 
          }else{
-          swal.fire(data.textResponse)
-          
-
+          swal.fire('Seras redirigido a la pagina de tú banco gracias')
+          window.location.href =data.data.urlbanco
          }
 
         },error=>{
